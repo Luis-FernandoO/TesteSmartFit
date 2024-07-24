@@ -5,14 +5,13 @@ header{
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-width: 100vw;
-  gap: 2em;
+  gap: 32px;
 }
 
 header .logo-container {
   margin: 0;
   background: black;
-  padding: 1.5em;
+  padding: 24px;
   width: 100%;
 
   display: flex;
@@ -49,11 +48,11 @@ header .text-container .heading {
   justify-content: flex-start;
   flex-direction: column;
 
-  margin-bottom: 1.5em;
-  gap: 1.2em;
+  margin-bottom: 24px;
+  gap: 14px;
 }
 header .text-container .heading .heading-border {
-  height: .6em;
+  height: 12px;
   width: 40%;
   background-color: var(--dark-grey);
 }
