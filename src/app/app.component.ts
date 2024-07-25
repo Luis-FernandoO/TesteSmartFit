@@ -4,6 +4,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { CommonModule } from '@angular/common';
+import { Location } from './types/location.interface';
+import { GetUnitsService } from './services/get-units.service';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +19,21 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FormsComponent,
     ReactiveFormsModule,
     HttpClientModule,
+    CardListComponent,
+    CommonModule,
   ],
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'TesteSmartFit';
+  showList = new BehaviorSubject(false);
+  unitsList: Location[] = [];
+  constructor(private unitService: GetUnitsService) {}
+
+  onSubmit() {
+    this.unitsList = this.unitService.getFilterUnits();
+    this.showList.next(true);
+  }
 }
+
