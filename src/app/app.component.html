@@ -1,5 +1,6 @@
 <div class="app-container">
   <app-header />
   <app-forms (submitEvent)="onSubmit()" />
+  <app-legend />
   <app-card-list *ngIf="(showList | async)" [unitsList]="unitsList" />
 </div>
