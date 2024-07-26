@@ -1,0 +1,21 @@
+footer {
+  display: flex;
+  flex-direction:column ;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 28px;
+  gap: 32px;
+
+  background-color: var(--dark-grey);
+}
+
+footer p {
+  color:var(--light-text) ;
+}
+
+footer img {
+  height:50px;
+}
